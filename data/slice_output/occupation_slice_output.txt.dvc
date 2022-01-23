@@ -1,0 +1,4 @@
+outs:
+- md5: 1e738b61a2b9c8e2626e2928cdd656bd
+  size: 599
+  path: occupation_slice_output.txt

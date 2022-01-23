@@ -1,0 +1,4 @@
+outs:
+- md5: db7aaa90c365e39aa2fd05814cb8998f
+  size: 1375
+  path: native-country_slice_output.txt

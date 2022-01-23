@@ -1,0 +1,4 @@
+outs:
+- md5: 9f71c28289b07c61351dbfe22a65bc4e
+  size: 239
+  path: relationship_slice_output.txt

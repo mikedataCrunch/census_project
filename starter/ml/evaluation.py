@@ -64,10 +64,10 @@ if __name__ == "__main__":
     for feat in cat_feats:
         performance = slice_validation(test_results, feat)
         # create save dir if not exists
-        if not os.path.exists('slice_output'):
-            os.makedirs('slice_output')
+        if not os.path.exists('data/slice_output'):
+            os.makedirs('data/slice_output')
         np.savetxt(
-            f'slice_output/{feat}_slice_output.txt', 
+            f'data/slice_output/{feat}_slice_output.txt', 
             performance.values, 
             fmt=("%s", "%5.5f", "%5.5f", "%5.5f"),
             delimiter='\t',

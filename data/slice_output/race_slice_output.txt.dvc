@@ -1,0 +1,4 @@
+outs:
+- md5: ad300dfef553897231f4fe40264092b8
+  size: 209
+  path: race_slice_output.txt
