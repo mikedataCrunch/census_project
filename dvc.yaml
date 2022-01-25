@@ -1,0 +1,11 @@
+stages:
+  train:
+    cmd: python starter/train_model.py
+    deps:
+    - data/census_clean.csv
+    - starter/train_model.py
+    outs:
+    - data/validation_results.csv
+    - starter/model/encoder.joblib
+    - starter/model/lbinarizer.joblib
+    - starter/model/model.joblib
