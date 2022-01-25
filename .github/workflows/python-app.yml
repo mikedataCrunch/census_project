@@ -35,6 +35,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Pull data from DVC
+      run: |
+        dvc remote add -d -f s3remote s3://mdorosan2022/census_project/
+        dvc pull
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
