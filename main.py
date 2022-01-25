@@ -11,13 +11,13 @@ from starter.ml.data import process_data
 import pandas as pd
 from joblib import load
 # # dvc set up with heroku
-# import os
+import os
 
-# if "DYNO" in os.environ and os.path.isdir(".dvc"):
-#     os.system("dvc config core.no_scm true")
-#     if os.system("dvc pull") != 0:
-#         exit("dvc pull failed")
-#     os.system("rm -r .dvc .apt/usr/lib/dvc")
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 # Instantiate the app.
 app = FastAPI()
