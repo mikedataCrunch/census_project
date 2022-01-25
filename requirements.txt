@@ -2,7 +2,7 @@ numpy
 pandas
 scikit-learn
 dvc
-dvc-s3
+'dvc[s3]'
 flake8
 pytest
 requests
