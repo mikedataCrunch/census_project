@@ -2,9 +2,11 @@ numpy
 pandas
 scikit-learn
 dvc
+dvc[s3]
 flake8
 pytest
 requests
 fastapi==0.63.0
 uvicorn
+
 # fix this file, error encountered when installing python
