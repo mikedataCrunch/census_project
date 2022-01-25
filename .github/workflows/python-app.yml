@@ -33,8 +33,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install - requirements.txt
+        # pip install flake8 pytest
+        # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Pull data from DVC
       run: |
         dvc remote add -d -f s3remote s3://mdorosan2022/census_project/
