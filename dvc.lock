@@ -4,15 +4,15 @@ stages:
     cmd: python starter/train_model.py
     deps:
     - path: data/census_clean.csv
-      md5: 12c208530a5680c15ae19b34152286dd
+      md5: a32f701d214a94d32b95725d6a9acdc4
       size: 3518606
     - path: starter/train_model.py
-      md5: 374f0a19f911e8c26534a66fd4f5ab76
-      size: 1521
+      md5: 01c119fc34fa5fffecd131c362b8e581
+      size: 1533
     outs:
     - path: data/validation_results.csv
-      md5: 2cbe6a5166a42fe8a44d3daa14c3cdf1
-      size: 742758
+      md5: 20f438ab5fb7d404040203bfe33fc4d0
+      size: 743039
     - path: starter/model/encoder.joblib
       md5: a553f204feb7d25cff7013915fd7ce8a
       size: 3898
@@ -20,5 +20,5 @@ stages:
       md5: 68d67643c2f11e180eaa335146ade2ea
       size: 403
     - path: starter/model/model.joblib
-      md5: ea50e3a359456226081e78ce640ee974
+      md5: 8ba44275148f190bf54af6633ac4a217
       size: 1645
