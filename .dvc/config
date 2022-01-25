@@ -1,4 +1,0 @@
-[core]
-    remote = s3_remote
-['remote "s3_remote"']
-    url = s3://mdorosan2022/census_project/
