@@ -2,3 +2,4 @@
     remote = s3remote
 ['remote "s3remote"']
     url = s3://mdorosan2022/census_project/
+    region = us-east-1
