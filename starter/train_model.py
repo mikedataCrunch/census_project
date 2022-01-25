@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 
 # Add the necessary imports for the starter code.
 import pandas as pd
-import os
 from joblib import dump, load
 from ml.data import process_data
 from ml.model import train_model, compute_model_metrics, inference
@@ -19,12 +18,12 @@ train, test = train_test_split(data, test_size=0.20)
 cat_features = [
     "workclass",
     "education",
-    "marital-status",
+    "marital_status",
     "occupation",
     "relationship",
     "race",
     "sex",
-    "native-country",
+    "native_country",
 ]
 
 X_train, y_train, encoder, lb = process_data(
@@ -55,3 +54,5 @@ test['predictions'] = lb.inverse_transform(preds)
 # test results saved together with original test data with added column
 # new col: 'predictions'
 test.to_csv('data/validation_results.csv', index=False)
+
+# retrain

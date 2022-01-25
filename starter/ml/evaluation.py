@@ -57,9 +57,16 @@ def slice_validation(results_df, cat_feature):
 
 if __name__ == "__main__":
 
-    cat_feats = [i for i in test_results.columns[test_results.dtypes == object].to_list()]
-    cat_feats.remove('salary')
-    cat_feats.remove('predictions')
+    cat_feats = [
+        "workclass",
+        "education",
+        "marital_status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native_country"
+    ]
 
     for feat in cat_feats:
         performance = slice_validation(test_results, feat)

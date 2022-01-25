@@ -6,12 +6,24 @@ from typing import Union
 # BaseModel from Pydantic is used to define data objects.
 from pydantic import BaseModel
 
+from starter.ml.model import inference
+from starter.ml.data import process_data
+import pandas as pd
+from joblib import load
+# # dvc set up with heroku
+# import os
+
+# if "DYNO" in os.environ and os.path.isdir(".dvc"):
+#     os.system("dvc config core.no_scm true")
+#     if os.system("dvc pull") != 0:
+#         exit("dvc pull failed")
+#     os.system("rm -r .dvc .apt/usr/lib/dvc")
+
 # Instantiate the app.
 app = FastAPI()
 
 # Declare the data object with its components and their type.
-class Input(BaseModel):
-    inference_id : int
+class Item(BaseModel):
     # insert type hinting here for feature inputs
     age: int
     workclass: str 
@@ -25,7 +37,7 @@ class Input(BaseModel):
     sex : str
     capital_gain : Union[int, float]
     capital_loss : Union[int, float]
-    hours_per_week : str
+    hours_per_week : int
     native_country : str
 
 # Define a GET on the specified endpoint.
@@ -34,11 +46,10 @@ async def greet_root():
     return {"greeting": "Hello World!"}
 
 @app.post("/inferences/")
-async def create_input(
-    input : Input = Body(
+async def predict(
+    item : Item = Body(
         ...,
         example={
-            "inference_id": 0,
             # insert expected feature inputs here
             "age" : 39,
             "workclass" : "State-gov",
@@ -56,24 +67,34 @@ async def create_input(
             "native_country" : "United-States" 
         },
     ),
-):
-    return input
+):  
+    item = {k : [v] for k, v in item.dict().items()}
+    test = pd.DataFrame.from_dict(item)
+    # load inputs
+    encoder = load('starter/model/encoder.joblib')
+    lb = load('starter/model/lbinarizer.joblib')
 
-@app.get("/inferences/{inference_id}")
-async def get_salary(
-    inference_id : int
-):
-    # insert code of predicting salary here
-    return {
-        "salary": f"Predicted salary for {inference_id} is ..."}
+    cat_features = [
+        "workclass",
+        "education",
+        "marital_status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native_country",
+    ]
 
+    # proces the test data with the process_data function.
+    test, _, _, _ = process_data(
+        test, categorical_features=cat_features, training=False,
+        encoder=encoder, lb=lb
+    )
 
+    # load the model
+    model = load('starter/model/model.joblib')
 
-# import os
+    salary = inference(model=model, X=test)
+    salary = lb.inverse_transform(salary)[0] # index item to get str out
 
-# if "DYNO" in os.environ and os.path.isdir(".dvc"):
-#     os.system("dvc config core.no_scm true")
-#     if os.system("dvc pull") != 0:
-#         exit("dvc pull failed")
-#     os.system("rm -r .dvc .apt/usr/lib/dvc")
-
+    return {"salary": salary}
