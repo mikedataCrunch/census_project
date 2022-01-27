@@ -31,8 +31,8 @@ The model's performance was evaluated using the remaining 20%.  These metrics we
 
 ## Metrics
 Here are the model performance on the following metrics (high: 1.0, low: 0.0): 
-|-|-|-|
 |precision|recall|fbeta|
+|:--:|:--:|:--:|
 |0.73|0.26|0.37|
 
 ## Ethical Considerations
