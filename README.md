@@ -39,10 +39,6 @@ To use your new S3 bucket from the AWS CLI you will need to create an IAM user w
 - Configure your AWS CLI to use the Access key ID and Secret Access key, follow the prompts after the command: `aws configure`
 
 
-### Heroku Account
-- Set up a heroku account through their webpage
-- Ensure that heroku cli recognizes your account, CLI run: `heroku login`
-
 ### **GitHub Actions**
 - Setup GitHub Actions on your repository. You can use one of the pre-made GitHub Actions if at a minimum it runs pytest and flake8 on push and requires both to pass without error.
 - Make sure you set up the GitHub Action to have the same version of Python as you used in development. The action `.yml` file can be modified accordingly.
@@ -55,6 +51,7 @@ To use your new S3 bucket from the AWS CLI you will need to create an IAM user w
 
 ### API Deployment: Heroku
 - Create a free Heroku account (for the next steps you can either use the web GUI or download the Heroku CLI).
+- Ensure that heroku cli recognizes your account, CLI run: `heroku login`
 - Create a new app and have it deployed from your GitHub repository.
     - Enable automatic deployments that only deploy if your continuous integration passes.
     - Hint: think about how paths will differ in your local environment vs. on Heroku.
