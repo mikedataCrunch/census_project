@@ -54,5 +54,3 @@ test['predictions'] = lb.inverse_transform(preds)
 # test results saved together with original test data with added column
 # new col: 'predictions'
 test.to_csv('data/validation_results.csv', index=False)
-
-# retrain
