@@ -108,4 +108,11 @@ This link demonstrates the deployment of the Heroku App in the CLI: https://devc
 
 Issues encountered: Python buildpack not installed, can be fixed by explictly putting the the python app buildpack as a heroku CLI command or by setting it up in the dashboard settings of Heroku.
 
+### Other notes
+- Redeployment of heroku app with no changes in repo.
+```
+git commit --allow-empty -m "Trigger Heroku deploy after enabling collectstatic"
+git push heroku master
+```
+
 ## End
