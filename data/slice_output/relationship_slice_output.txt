@@ -1,0 +1,7 @@
+# classes	precision	recall	fbeta
+Husband	0.82471	0.23798	0.29213
+Own-child	0.31818	0.77778	0.29213
+Not-in-family	0.56311	0.36709	0.29213
+Unmarried	0.65385	0.32692	0.29213
+Other-relative	0.80000	0.72727	0.29213
+Wife	0.66667	0.18705	0.29213

@@ -1,0 +1,8 @@
+# classes	precision	recall	fbeta
+Married-civ-spouse	0.81026	0.23442	0.00000
+Never-married	0.47727	0.42424	0.00000
+Divorced	0.64286	0.34177	0.00000
+Widowed	0.72727	0.38095	0.00000
+Separated	0.54545	0.37500	0.00000
+Married-spouse-absent	0.66667	0.40000	0.00000
+Married-AF-spouse	1.00000	0.00000	0.00000

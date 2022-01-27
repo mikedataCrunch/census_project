@@ -1,0 +1,6 @@
+# classes	precision	recall	fbeta
+White	0.73800	0.25877	0.60000
+Black	0.71429	0.16854	0.60000
+Asian-Pac-Islander	0.72222	0.26000	0.60000
+Other	0.75000	0.60000	0.60000
+Amer-Indian-Eskimo	0.60000	0.60000	0.60000

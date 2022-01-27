@@ -1,0 +1,10 @@
+# classes	precision	recall	fbeta
+Self-emp-not-inc	0.78462	0.32075	1.00000
+?	0.55556	0.32258	1.00000
+Private	0.71299	0.23742	1.00000
+Federal-gov	0.69231	0.15789	1.00000
+Local-gov	0.66000	0.24088	1.00000
+Self-emp-inc	0.92308	0.37795	1.00000
+State-gov	0.88889	0.22857	1.00000
+Without-pay	0.00000	1.00000	1.00000
+Never-worked	1.00000	1.00000	1.00000

@@ -1,0 +1,16 @@
+# classes	precision	recall	fbeta
+Prof-specialty	0.84034	0.27548	1.00000
+?	0.55556	0.32258	1.00000
+Adm-clerical	0.40909	0.22222	1.00000
+Farming-fishing	0.68750	0.40741	1.00000
+Handlers-cleaners	0.66667	0.12500	1.00000
+Exec-managerial	0.91912	0.30788	1.00000
+Machine-op-inspct	0.37500	0.13043	1.00000
+Sales	0.83871	0.24645	1.00000
+Tech-support	0.55556	0.08197	1.00000
+Other-service	0.29167	0.29167	1.00000
+Craft-repair	0.68657	0.23232	1.00000
+Priv-house-serv	1.00000	1.00000	1.00000
+Protective-serv	0.69231	0.18367	1.00000
+Transport-moving	0.57143	0.19355	1.00000
+Armed-Forces	1.00000	1.00000	1.00000
