@@ -1,6 +1,9 @@
 # Welcome
 This repository contains a demonstration of basic CI/CD principles in three complementary components explained below--after some introduction on the set-up and dataset.
 
+GET greeting: https://census-mdorosan2022.herokuapp.com/
+Docs to try out the POST inference: https://census-mdorosan2022.herokuapp.com/docs
+
 ## Set-up
 ### Repository
 - Clone this repository
