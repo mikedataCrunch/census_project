@@ -51,6 +51,10 @@ model = load('starter/model/model.joblib')
 preds = inference(model, X_test)
 test['predictions'] = lb.inverse_transform(preds)
 
+precision, recall, fbeta = compute_model_metrics(y_test, preds)
+with open('data/overall_metrics.txt', 'w') as f:
+    f.write(f"Precision: {precision}\nRecall: {recall}\nFbeta: {fbeta}")
+
 # test results saved together with original test data with added column
 # new col: 'predictions'
 test.to_csv('data/validation_results.csv', index=False)
